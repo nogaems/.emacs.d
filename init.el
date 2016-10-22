@@ -50,5 +50,16 @@
 (require 'py-autopep8)
 (add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
 
+;; To support shortcuts in Russian keyboard layout
+
+(loop
+ for from across "йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖ\ЭЯЧСМИТЬБЮ№"
+ for to   across "qwertyuiop[]asdfghjkl;'zxcvbnm,.QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>#"
+ do
+ (eval `(define-key key-translation-map (kbd ,(concat "C-" (string from))) (kbd ,(concat     
+"C-" (string to)))))
+ (eval `(define-key key-translation-map (kbd ,(concat "M-" (string from))) (kbd ,(concat     
+"M-" (string to))))))
+
 ;; init.el ends here
 
