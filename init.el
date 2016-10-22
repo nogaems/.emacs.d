@@ -61,5 +61,10 @@
  (eval `(define-key key-translation-map (kbd ,(concat "M-" (string from))) (kbd ,(concat     
 "M-" (string to))))))
 
+;; Add ace-jump-mode
+
+(require 'ace-jump-mode)
+(define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
+
 ;; init.el ends here
 
