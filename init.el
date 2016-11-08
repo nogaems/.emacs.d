@@ -25,6 +25,9 @@
       (package-install package)))
       myPackages)
 
+;; Company (COMPlete ANYthing)
+(add-hook 'after-init-hook 'global-company-mode)
+
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
 (require 'color-theme)
