@@ -28,6 +28,9 @@
 ;; Company (COMPlete ANYthing)
 (add-hook 'after-init-hook 'global-company-mode)
 
+;; Set C code style to "linux"
+(setq c-default-style "linux")
+
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
 (require 'color-theme)
