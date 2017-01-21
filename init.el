@@ -29,8 +29,8 @@
 (add-hook 'after-init-hook 'global-company-mode)
 
 ;; Set C code style to "linux"
-(setq c-default-style "linux")
-
+(setq c-default-style "linux"
+      c-basic-offset 4)
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
 (require 'color-theme)
