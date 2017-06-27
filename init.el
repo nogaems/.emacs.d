@@ -74,5 +74,7 @@
 (require 'ace-jump-mode)
 (define-key global-map (kbd "C-c SPC") 'ace-jump-mode)
 
-;; init.el ends here
+;; nasm-mode
+(require 'nasm-mode)
+(add-to-list 'auto-mode-alist '("\\.\\(asm\\|s\\)$" . nasm-mode))
 
