@@ -78,3 +78,7 @@
 (require 'nasm-mode)
 (add-to-list 'auto-mode-alist '("\\.\\(asm\\|s\\)$" . nasm-mode))
 
+;; ag
+(require 'ag)
+
+;; init.el ends here
