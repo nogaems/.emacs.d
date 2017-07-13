@@ -81,4 +81,7 @@
 ;; ag
 (require 'ag)
 
+;; add automatic session saving during exit and restoring after restart
+(desktop-save-mode 1)
+
 ;; init.el ends here
