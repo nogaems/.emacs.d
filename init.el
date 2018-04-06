@@ -84,4 +84,29 @@
 ;; add automatic session saving during exit and restoring after restart
 (desktop-save-mode 1)
 
+
+;; Quicklisp
+(if (file-exists-p "~/quicklisp/dists/quicklisp/software/")
+    (let ((slime-path
+           (car (file-expand-wildcards
+                 (expand-file-name "~/quicklisp/dists/quicklisp/software/slime-*")))))
+      (if (file-exists-p slime-path) (add-to-list 'load-path slime-path))))
+
+;; Slime
+
+  (load (expand-file-name "~/quicklisp/slime-helper.el"))
+  ;; Replace "sbcl" with the path to your implementation
+  (setq inferior-lisp-program "sbcl")
+
+
+
+
+;; Slime
+;;(require 'slime)
+;(add-hook 'lisp-mode-hook (lambda () (slime-mode t)))
+;;(add-hook 'inferior-lisp-mode-hook (lambda () (inferior-slime-mode t)))
+;; Optionally, specify the lisp program you are using. Default is "lisp"
+;;(setq inferior-lisp-program "yourlisp") 
+
+
 ;; init.el ends here
