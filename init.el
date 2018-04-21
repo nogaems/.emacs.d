@@ -1,5 +1,8 @@
 ;; init.el --- Emacs configuration
 
+;; Make it possible to use several config files at the same time
+(add-to-list 'load-path (expand-file-name "~/.emacs.d/inits/"))
+
 ;; INSTALL PACKAGES
 ;; --------------------------------------
 
@@ -108,5 +111,43 @@
 ;; Optionally, specify the lisp program you are using. Default is "lisp"
 ;;(setq inferior-lisp-program "yourlisp") 
 
+
+;; Org mode
+(setq org-directory "~/.emacs.d/org/")
+;; Don't forget to do that after setting this path
+;; cd ~/.emacs.d/org ; touch touch todo.org diary.org org.org bookmarks.org refile.org work.org events.org paste.org
+(require 'init-org)
+;; Hotkeys
+(define-prefix-command 'org-menu-map)
+(define-key global-map (kbd "<f9>") 'org-menu-map)
+(define-key global-map (kbd "<f9> <f9>") 'bh/show-org-agenda)
+(define-key global-map (kbd "<f9> b") 'bbdb)
+(define-key global-map (kbd "<f9> c") 'calendar)
+(define-key global-map (kbd "<f9> f") 'boxquote-insert-file)
+(define-key global-map (kbd "<f9> g") 'gnus)
+(define-key global-map (kbd "<f9> h") 'bh/hide-other)
+(define-key global-map (kbd "<f9> n") 'org-narrow-to-subtree)
+(define-key global-map (kbd "<f9> u") 'bh/narrow-up-one-level)
+(define-key global-map (kbd "<f9> o") 'bh/make-org-scratch)
+(define-key global-map (kbd "<f9> s") 'bh/switch-to-scratch)
+(define-key global-map (kbd "<f9> w") 'widen)
+(define-key global-map (kbd "<f9> r") 'boxquote-region)
+(define-key global-map (kbd "<f9> T") 'tabify)
+(define-key global-map (kbd "<f9> U") 'untabify)
+(define-key global-map (kbd "<f9> v") 'visible-mode)
+(define-key global-map (kbd "<f7>") 'bh/set-truncate-lines)
+(define-key global-map (kbd "<f5>") 'bh/org-todo)
+(define-key global-map (kbd "S-<f5>") 'bh/widen)
+(define-key global-map (kbd "C-c l") 'org-store-link)
+(define-key global-map (kbd "C-c a") 'org-agenda)
+(define-key global-map (kbd "C-c b") 'org-iswitchb)
+(define-key global-map (kbd "C-x m") 'browse-url-at-point)
+(define-key global-map (kbd "<f8>") 'org-cycle-agenda-files)
+(define-key global-map (kbd "C-<f9>") 'previous-buffer)
+(define-key global-map (kbd "M-<f9>") 'org-toggle-inline-images)
+(define-key global-map (kbd "C-<f10>") 'next-buffer)
+(define-key global-map (kbd "<f11>") 'org-clock-goto)
+(define-key global-map (kbd "C-<f11>") 'org-clock-in)
+(define-key global-map (kbd "C-c c") 'org-capture)
 
 ;; init.el ends here
