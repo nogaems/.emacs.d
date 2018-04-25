@@ -150,4 +150,8 @@
 (define-key global-map (kbd "C-<f11>") 'org-clock-in)
 (define-key global-map (kbd "C-c c") 'org-capture)
 
+;; Set palemoon as a default browser
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "palemoon")
+
 ;; init.el ends here
