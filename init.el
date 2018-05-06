@@ -154,4 +154,7 @@
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "palemoon")
 
+;; Start the server
+(server-start)
+
 ;; init.el ends here
