@@ -67,9 +67,9 @@
  for from across "йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖ\ЭЯЧСМИТЬБЮ№"
  for to   across "qwertyuiop[]asdfghjkl;'zxcvbnm,.QWERTYUIOP{}ASDFGHJKL:\"ZXCVBNM<>#"
  do
- (eval `(define-key key-translation-map (kbd ,(concat "C-" (string from))) (kbd ,(concat     
+ (eval `(define-key key-translation-map (kbd ,(concat "C-" (string from))) (kbd ,(concat
 "C-" (string to)))))
- (eval `(define-key key-translation-map (kbd ,(concat "M-" (string from))) (kbd ,(concat     
+ (eval `(define-key key-translation-map (kbd ,(concat "M-" (string from))) (kbd ,(concat
 "M-" (string to))))))
 
 ;; Add ace-jump-mode
@@ -101,15 +101,15 @@
   ;; Replace "sbcl" with the path to your implementation
   (setq inferior-lisp-program "sbcl")
 
-
-
+;; Delelte trailing whitespaces in every mode
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
 
 ;; Slime
 ;;(require 'slime)
 ;(add-hook 'lisp-mode-hook (lambda () (slime-mode t)))
 ;;(add-hook 'inferior-lisp-mode-hook (lambda () (inferior-slime-mode t)))
 ;; Optionally, specify the lisp program you are using. Default is "lisp"
-;;(setq inferior-lisp-program "yourlisp") 
+;;(setq inferior-lisp-program "yourlisp")
 
 
 ;; Org mode
