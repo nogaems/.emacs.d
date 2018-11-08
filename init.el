@@ -42,7 +42,11 @@
 
 (setq inhibit-startup-message t) ;; hide the startup message
 ;;(load-theme 'material t) ;; load material theme
-(global-linum-mode t) ;; enable line numbers globally
+;; Once i've moved to 26 version I don't need it anymore, so I commented it out
+;;(global-linum-mode t) ;; enable line numbers globally
+(when (version<= "26.0.50" emacs-version )
+  (global-display-line-numbers-mode))
+
 
 (setq column-number-mode t)
 
