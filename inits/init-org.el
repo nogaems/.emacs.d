@@ -1,4 +1,4 @@
-(require 'org-install)    
+(require 'org-install)
 (require 'org-protocol)
 (require 'org-capture)
 (require 'org-crypt)
@@ -101,11 +101,11 @@
       org-work-file        (concat org-directory "work.org")
       org-work-file        (concat org-directory "events.org")
       org-paste-file       (concat org-directory "paste.org"))
-(setq org-agenda-files (list org-todo-file 
-							 org-diary-file 
-							 org-org-file 
-							 org-bookmarks-file 
-							 org-refile-file 
+(setq org-agenda-files (list org-todo-file
+							 org-diary-file
+							 org-org-file
+							 org-bookmarks-file
+							 org-refile-file
 							 org-work-file
 							 org-paste-file))
 (setq org-default-notes-file org-refile-file)
@@ -152,8 +152,8 @@
 
 ;; Enable display of the time grid so we can see the marker for the current time
 (setq org-agenda-time-grid (quote ((daily today remove-match)
-                                   #("----------------" 0 16 (org-heading t))
-                                   (0900 1100 1300 1500 1700))))
+                                   (0800 1200 1400 1600 1800 2000 2200)
+                                   "      " "----------------")))
 
 ;; Display tags farther right
 (setq org-agenda-tags-column -102)

@@ -1,0 +1,31 @@
+Debugger entered--Lisp error: (void-function string-to-int)
+  (string-to-int (format-time-string "%d" (current-time)))
+  (let* ((subtree-end (save-excursion (org-end-of-subtree t))) (daynr (string-to-int 
+(format-time-string "%d" (current-time)))) (a-mo$
+  (if (member (org-get-todo-state) org-done-keywords) (let* ((subtree-end (save-excursion 
+(org-end-of-subtree t))) (daynr (string-to-$
+  (let ((next-headline (save-excursion (or (outline-next-heading) (point-max))))) (if 
+(member (org-get-todo-state) org-done-keywords)$
+  (save-restriction (widen) (let ((next-headline (save-excursion (or (outline-next-heading) 
+(point-max))))) (if (member (org-get-todo$
+  bh/skip-non-archivable-tasks()
+  org-agenda-skip-eval(bh/skip-non-archivable-tasks)
+  org-agenda-skip()
+  org-scan-tags(agenda (lambda (todo tags-list level) (progn (setq org-cached-props nil) (or 
+(and (not (member "REFILE" tags-list))))$
+  org-tags-view(nil "-REFILE/")
+  (let ((org-agenda-overriding-header "Tasks to Archive") (org-agenda-skip-function 
+'bh/skip-non-archivable-tasks) (org-tags-match-li$
+  (let nil (let ((org-agenda-overriding-header "Tasks to Archive") (org-agenda-skip-function 
+'bh/skip-non-archivable-tasks) (org-tags$
+  eval((let nil (let ((org-agenda-overriding-header "Tasks to Archive") 
+(org-agenda-skip-function 'bh/skip-non-archivable-tasks) (org$
+  org-let2(nil ((org-agenda-overriding-header "Tasks to Archive") (org-agenda-skip-function 
+'bh/skip-non-archivable-tasks) (org-tags-$
+  org-agenda-run-series("Agenda" (((agenda "" nil) (tags "REFILE" 
+((org-agenda-overriding-header "Tasks to Refile") (org-tags-match-l$
+  org-agenda(nil)
+  funcall-interactively(org-agenda nil)
+  call-interactively(org-agenda nil nil)
+  command-execute(org-agenda)
+
