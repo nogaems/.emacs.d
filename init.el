@@ -19,6 +19,7 @@
   '(better-defaults
     ein
     elpy
+    pyvenv
     flycheck
     material-theme
     py-autopep8))
