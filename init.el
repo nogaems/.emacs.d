@@ -89,9 +89,36 @@
 ;; ag
 (require 'ag)
 
-;; add automatic session saving during exit and restoring after restart
-(desktop-save-mode 1)
+;; add session saving during exit and restoring after restart
+;; use only one desktop
+(setq desktop-path '("~/.emacs.d/"))
+(setq desktop-dirname "~/.emacs.d/")
+(setq desktop-base-file-name "emacs-desktop")
+(setq desktop-save-mode 0)
+(setq desktop-restore-frames nil)
 
+(defun saved-session ()
+  (file-exists-p (concat desktop-dirname "/" desktop-base-file-name)))
+
+;; use session-restore to restore the desktop manually
+(defun session-restore ()
+  "Restore a saved emacs session."
+  (interactive)
+  (if (saved-session)
+      (desktop-read)
+    (message "No desktop found.")))
+
+;; use session-save to save the desktop manually
+(defun session-save ()
+  "Save an emacs session."
+  (interactive)
+  (if (saved-session)
+      (if (y-or-n-p "Overwrite existing desktop? ")
+	  (desktop-save-in-desktop-dir)
+	(message "Session not saved."))
+  (desktop-save-in-desktop-dir)))
+
+(add-hook 'kill-emacs-query-functions 'session-save)
 
 ;; Quicklisp
 (if (file-exists-p "~/quicklisp/dists/quicklisp/software/")
