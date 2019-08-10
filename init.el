@@ -96,6 +96,7 @@
 (setq desktop-base-file-name "emacs-desktop")
 (setq desktop-save-mode 0)
 (setq desktop-restore-frames nil)
+(setq desktop-load-locked-desktop t)
 
 (defun saved-session ()
   (file-exists-p (concat desktop-dirname "/" desktop-base-file-name)))
@@ -118,7 +119,7 @@
 	(message "Session not saved."))
   (desktop-save-in-desktop-dir)))
 
-(add-hook 'kill-emacs-query-functions 'session-save)
+(add-hook 'kill-emacs-query-functions 'desktop-save-in-desktop-dir)
 
 ;; Quicklisp
 (if (file-exists-p "~/quicklisp/dists/quicklisp/software/")
