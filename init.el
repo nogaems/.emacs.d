@@ -183,6 +183,65 @@
 (define-key global-map (kbd "C-<f11>") 'org-clock-in)
 (define-key global-map (kbd "C-c c") 'org-capture)
 
+;; fix bindings
+
+(define-key function-key-map "\e[A" [up])
+(define-key function-key-map "\e[B" [down])
+(define-key function-key-map "\e[C" [right])
+(define-key function-key-map "\e[D" [left])
+
+(define-key function-key-map "\e[1;2A" [S-up])
+(define-key function-key-map "\e[1;2B" [S-down])
+(define-key function-key-map "\e[1;2C" [S-right])
+(define-key function-key-map "\e[1;2D" [S-left])
+
+(define-key function-key-map "\e[1;5A" [C-up])
+(define-key function-key-map "\e[1;5B" [C-down])
+(define-key function-key-map "\e[1;5C" [C-right])
+(define-key function-key-map "\e[1;5D" [C-left])
+
+(define-key function-key-map "\e[1;3A" [M-up])
+(define-key function-key-map "\e[1;3B" [M-down])
+(define-key function-key-map "\e[1;3C" [M-right])
+(define-key function-key-map "\e[1;3D" [M-left])
+
+;(define-key function-key-map "\e[1;7A" [C-M-up])
+;(define-key function-key-map "\e[1;7B" [C-M-down])
+;(define-key function-key-map "\e[1;7C" [C-M-right])
+;(define-key function-key-map "\e[1;7D" [C-M-left])
+
+(define-key function-key-map "\e[2~" [insert])
+(define-key function-key-map "\e[3~" [delete])
+(define-key function-key-map "\e[7~" [home])
+(define-key function-key-map "\e[8~" [end])
+(define-key function-key-map "\e[5~" [prior])
+(define-key function-key-map "\e[6~" [next])
+
+(define-key function-key-map "\e[2;2~" [S-insert])
+(define-key function-key-map "\e[3;2~" [S-delete])
+
+(define-key function-key-map "\e[2;5~" [C-insert])
+(define-key function-key-map "\e[3;5~" [C-delete])
+(define-key function-key-map "\e[1;5H" [C-home])
+(define-key function-key-map "\e[1;5F" [C-end])
+(define-key function-key-map "\e[1;5F" [C-end])
+(define-key function-key-map "\e[5;5~" [C-prior])
+(define-key function-key-map "\e[6;5~" [C-next])
+
+;(define-key function-key-map "\e[2;3~" [M-insert])
+;(define-key function-key-map "\e[3;3~" [M-delete])
+;(define-key function-key-map "\e\e[7~" [M-home])
+;(define-key function-key-map "\e\e[8~" [M-end])
+;(define-key function-key-map "\e[5;3~" [M-prior])
+;(define-key function-key-map "\e[6;3~" [M-next])
+
+;(define-key function-key-map "\e[2;7~" [C-M-insert])
+;(define-key function-key-map "\e[3;7~" [C-M-delete])
+;(define-key function-key-map "\e[1;7H" [C-M-home])
+;(define-key function-key-map "\e[1;7F" [C-M-end])
+;(define-key function-key-map "\e[5;7~" [C-M-prior])
+;(define-key function-key-map "\e[6;7~" [C-M-next])
+
 ;; Set palemoon as a default browser
 (setq browse-url-browser-function 'browse-url-generic
       browse-url-generic-program "palemoon")
