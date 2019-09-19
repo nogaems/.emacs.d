@@ -38,8 +38,10 @@
       c-basic-offset 4)
 ;; BASIC CUSTOMIZATION
 ;; --------------------------------------
-(load-theme 'material t t)
-(enable-theme 'material)
+;;(load-theme 'material t t)
+;;(enable-theme 'material)
+(load-theme 'jsc-dark t t)
+(enable-theme 'jsc-dark)
 (desktop-save-mode 1)
 (setq inhibit-startup-message t) ;; hide the startup message
 (menu-bar-mode -1)
